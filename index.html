@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carleton Class Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div class="nav">
+    <a href="index.html">📚 Courses</a>
+    <a href="schedule.html">📅 Schedule Maker</a>
+</div>
+<body>
+
+    <div class="container">
+
+        <h1>📚 Carleton Class Finder 📚</h1>
+
+        <div class="search-box">
+            <input id="subject" autocapitalize="true" placeholder="Subject (e.g. CHEM)">
+            <input id="number" placeholder="Course Number (e.g. 1101)">
+            <select id="Session" placeholder="Session">
+                <option defualt value="202630">Fall 2026</option>
+                <option value="202710">Winter 2026</option>
+            </select>
+            <button onclick="searchCourses()">Search</button>
+        </div>
+
+        <div id="results"></div>
+
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Restrict input to digits only
+        document.getElementById('number').addEventListener('input', function () {
+            // Remove any non-digit characters
+            this.value = this.value.replace(/\D/g, '');
+        });
+    </script>
+</body>
+</html>

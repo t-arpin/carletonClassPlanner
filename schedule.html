@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="schedule.css">
+</head>
+<body>
+
+<div class="nav">
+    <a href="index.html">📚 Courses</a>
+    <a href="schedule.html">📅 Schedule</a>
+</div>
+
+<div class="layout">
+
+    <!-- LEFT: CALENDAR -->
+    <div class="container">
+        <h1>My Schedule</h1>
+
+        <div class="calendar-header">
+            <div></div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+        </div>
+
+        <div class="calendar-wrapper">
+
+            <!-- TIME LABELS -->
+            <div id="timeLabels" class="time-labels"></div>
+
+            <!-- CALENDAR GRID -->
+            <div id="calendar" class="calendar"></div>
+
+        </div>
+    </div>
+
+    <!-- RIGHT: SIDEBAR -->
+    <div class="sidebar">
+        <h2>My Courses</h2>
+        <div id="courseList"></div>
+    </div>
+
+</div>
+
+<script src="schedule.js"></script>
+</body>
+</html>

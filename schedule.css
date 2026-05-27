@@ -1,0 +1,127 @@
+/* CALENDAR HEADER */
+.calendar-header {
+    display: grid;
+    grid-template-columns: 60px repeat(5, 1fr);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* CALENDAR BODY */
+.calendar {
+    position: relative;
+    height: 900px;
+    display: grid;
+    grid-template-columns: 60px repeat(5, 1fr);
+    border-top: 1px solid #ddd;
+}
+
+/* TIME LABEL COLUMN (optional) */
+.time-col {
+    position: relative;
+    border-right: 1px solid #eee;
+}
+
+/* CLASS BLOCKS */
+.block {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    background: #3498db;
+    color: white;
+    font-size: 11px;
+    padding: 4px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT SIDE (calendar) */
+.container {
+    flex: 1;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* RIGHT SIDEBAR */
+.sidebar {
+    width: 280px;
+    background: #f8f9fb;
+    border-left: 1px solid #ddd;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+/* COURSE LIST ITEMS */
+.course-item {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-item button {
+    background: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.calendar-wrapper {
+    display: flex;
+    position: relative;
+    height: 900px;
+}
+
+/* LEFT TIME LABELS */
+.time-labels {
+    width: 60px;
+    position: relative;
+    border-right: 1px solid #ccc;
+}
+
+/* EACH TIME LABEL */
+.time-label {
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    color: #777;
+    transform: translateY(-50%);
+}
+
+/* MAIN CALENDAR */
+.calendar {
+    flex: 1;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            white 0px,
+            white 74px,
+            #e5e7eb 75px
+        );
+}
+
+/* VERTICAL DAY LINES */
+.calendar > div {
+    border-right: 1px solid #ddd;
+    position: relative;
+}
