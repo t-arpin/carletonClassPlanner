@@ -9,7 +9,7 @@ async function searchCourses() {
 
     try {
         const res = await fetch(
-            `http://localhost:8000/courses?subject=${subject}&number=${number}&session=${session}`
+            `https://carleton-api.24radar.xyz//courses?subject=${subject}&number=${number}&session=${session}`
         );
 
         const data = await res.json();
