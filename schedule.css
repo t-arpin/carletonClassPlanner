@@ -55,10 +55,6 @@
     overflow-y: auto;
 }
 
-.sidebar h2 {
-    margin-top: 0;
-}
-
 /* COURSE LIST ITEMS */
 .course-item {
     background: white;
@@ -124,4 +120,8 @@
 .calendar > div {
     border-right: 1px solid #ddd;
     position: relative;
+}
+
+#Session {
+    margin-block: 15px;
 }

@@ -40,7 +40,13 @@
 
     <!-- RIGHT: SIDEBAR -->
     <div class="sidebar">
-        <h2>My Courses</h2>
+        <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
+            <h2>My Courses</h2>
+            <select id="Session" placeholder="Session">
+                <option defualt value="202630">Fall 2026</option>
+                <option value="202710">Winter 2026</option>
+            </select>
+        </div>
         <div id="courseList"></div>
     </div>
 

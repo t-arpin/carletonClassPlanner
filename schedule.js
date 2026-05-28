@@ -36,8 +36,45 @@ function renderCalendar() {
             block.style.height = (timeToY(end) - timeToY(start)) + "px";
 
             block.innerHTML = `
-                <b>${course.course}</b><br>
-                ${course.section}
+                <div style="
+                    font-weight: 700;
+                    font-size: 11px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                ">
+                    
+                </div>
+
+                <div style="
+                    font-size: 10px;
+                    opacity: 0.95;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                ">
+                    <b>${course.title}</b> ${course.course}
+                </div>
+
+                <div style="
+                    font-size: 10px;
+                    opacity: 0.85;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                ">
+                    ${course.instructor} • ${course.rating}
+                </div>
+
+                <div style="
+                    font-size: 10px;
+                    opacity: 0.75;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                ">
+                    ${course.schedule_type} • ${course.building}
+                </div>
             `;
 
             /* conflict detection */
@@ -63,15 +100,29 @@ function renderCalendar() {
 }
 
 function getSchedule() {
-    return JSON.parse(localStorage.getItem("schedule")) || [];
+    const session = document.getElementById("Session").value
+    if (session == 202630) {
+        return JSON.parse(localStorage.getItem("schedule-fall")) || [];
+    }
+    if (session == 202710) {
+        return JSON.parse(localStorage.getItem("schedule-winter")) || [];
+    }
 }
 
 function saveSchedule(data) {
-    localStorage.setItem("schedule", JSON.stringify(data));
+    const session = document.getElementById("Session").value
+    if (session == 202630) {
+        localStorage.setItem("schedule-fall", JSON.stringify(data));
+    }
+    if (session == 202710) {
+        localStorage.setItem("schedule-winter", JSON.stringify(data));
+    }
 }
 
 function renderSidebar() {
     const container = document.getElementById("courseList");
+    console.log(localStorage.getItem("Session"));
+    document.getElementById("Session").value = localStorage.getItem("session");
     container.innerHTML = "";
 
     const schedule = getSchedule();
@@ -131,6 +182,14 @@ function renderTimeLabels() {
         container.appendChild(div);
     }
 }
+
+document.getElementById("Session").addEventListener('change', (event) => {
+    localStorage.setItem("session", document.getElementById("Session").value)
+    renderSidebar();
+    renderCalendar();
+    renderTimeLabels();
+  });
+
 
 renderSidebar();
 renderCalendar();
